@@ -1,0 +1,23 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Node.js Contacts API
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: >
+    REST API для роботи з контактами, авторизацією користувачів, завантаженням аватарів і відновленням паролю.
+tags:
+  - name: Contacts
+    description: Операції з контактами
+  - name: Auth
+    description: Авторизація користувачів
+servers:
+  - url: http://localhost:3000
+  - url: https://node-js-hw7-swagger.onrender.com
+paths: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
