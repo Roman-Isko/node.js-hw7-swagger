@@ -1,0 +1,28 @@
+tags:
+  - Contacts
+summary: Отримати всі контакти
+operationId: getContacts
+description: Повертає список усіх контактів користувача
+security:
+  - bearerAuth: []
+parameters:
+  - name: favorite
+    in: query
+    schema:
+      type: boolean
+    description: Фільтр за улюбленими контактами
+responses:
+  '200':
+    description: Список контактів
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../components/schemas/contact.yaml'
+  '401':
+    description: Неавторизовано
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/responses/error.yaml'
